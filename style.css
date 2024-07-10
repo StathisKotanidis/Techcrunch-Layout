@@ -125,6 +125,10 @@ table {
 
 /* css reset above */
 
+html {
+  height: 100vh;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -139,7 +143,7 @@ body {
 
 nav {
   width: 10vw;
-  height: 50vh;
+  height: 100%;
 }
 
 nav > ul {
@@ -172,6 +176,7 @@ nav > ul img {
 
 main {
   width: 50vw;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -193,8 +198,8 @@ main > .image-container {
   display: flex;
   width: 900px;
   height: 350px;
-  overflow: hidden;
   margin-top: 10px;
+  overflow: hidden;
 }
 
 main > .image-container img {
@@ -204,6 +209,7 @@ main > .image-container img {
 
 .articles-section {
   width: 40vw;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -237,24 +243,31 @@ main > .image-container img {
   height: 20px;
 }
 
-h3 {
-  height: 5vh;
-  width: 90%;
-  padding-top: 20px;
-  margin-left: 11.8em;
-  font-weight: bold;
-}
-
 /* first half styling ends above*/
 
+.h3-container {
+  height: 5vh;
+  padding: 30px 0;
+  margin-left: 11.8em;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.h3-container h3 {
+  font-weight: bold;
+  font-weight: 1.3em;
+}
+
+/*h3 separate styling end above */
+
 .second-half {
-  height: 50vh;
-  /* border: 1px solid red; */
+  height: 45vh;
   display: flex;
 }
 
 .empty-space {
   width: 10%;
+  height: 100%;
 }
 
 .news-content {
@@ -335,8 +348,83 @@ h3 {
   }
 }
 
+@media (max-width: 1787px) {
+  .news-content {
+    height: 80%;
+  }
+}
+
+@media (max-width: 1562px) {
+  .news-headers {
+    font-size: 0.9em;
+  }
+}
+
 @media (max-width: 1441px) {
   .articles-section h2 {
     font-size: 1em;
   }
+}
+
+@media (max-width: 1234px) {
+  .first-half {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50vh;
+  }
+
+  nav {
+    flex-basis: 20%;
+    height: 50vh;
+    flex: 1;
+  }
+
+  main {
+    flex-basis: 80%;
+    height: 50vh;
+  }
+
+  .articles-section {
+    display: none;
+  }
+
+  .h3-container {
+    display: none;
+  }
+  .third-column {
+    display: none;
+  }
+
+  .second-half {
+    padding-top: 20px;
+    height: 50vh;
+    display: flex;
+  }
+
+  .empty-space {
+    width: 20vw;
+  }
+
+  .news-headers {
+    width: 40vw;
+  }
+
+  .news-paragraphs {
+    width: 40vw;
+  }
+
+  /*.first-column .articles-section {
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    margin-left: 10px;
+  }
+
+  .articles-section article {
+    width: 50%;
+  } */
 }
